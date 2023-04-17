@@ -16,6 +16,8 @@ import { HighlightDirective } from './directive/highlight.directive';
 import { RainbowDirective } from './directive/rainbow.directive';
 import { DefaultImagePipe } from './cvTech/default-image.pipe';
 import { EmbaucheComponent } from './cvTech/embauche/embauche.component';
+import {ROUTING} from "./app.routing";
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +33,14 @@ import { EmbaucheComponent } from './cvTech/embauche/embauche.component';
     HighlightDirective,
     RainbowDirective,
     DefaultImagePipe,
-    EmbaucheComponent
+    EmbaucheComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
