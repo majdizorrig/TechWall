@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Personne} from "../../model/Personne";
+import {EmbaucheService} from "../embauche.service";
 
 @Component({
   selector: 'app-detail-cv',
@@ -8,5 +9,13 @@ import {Personne} from "../../model/Personne";
 })
 export class DetailCvComponent {
  @Input() personne : Personne;
+
+ constructor(private emabucherService : EmbaucheService) {
+ }
+
+ embaucher(){
+   this.emabucherService.embaucher(this.personne);
+   console.log(this.personne)
+ }
 
 }

@@ -11,7 +11,7 @@ private personnes : Personne[];
     this.personnes = [];
   }
 
-  getEmbauher() : Personne[]{
+  getEmbauchees() : Personne[]{
     return this.personnes;
 }
 

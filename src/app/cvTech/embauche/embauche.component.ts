@@ -11,7 +11,7 @@ export class EmbaucheComponent {
   personnes : Personne [];
   constructor(private embaucheService : EmbaucheService) {}
   ngOnInit(){
-    this.personnes = this.embaucheService.getEmbauher();
+    this.personnes = this.embaucheService.getEmbauchees();
 
   }
 
