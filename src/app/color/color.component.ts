@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {PremierService} from "../premier.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-color',
@@ -10,7 +11,14 @@ import {PremierService} from "../premier.service";
 export class ColorComponent {
 color="pink";
 
-constructor(private premierService : PremierService) {
+constructor(private premierService : PremierService,
+            private router : Router,
+            private activateRoute : ActivatedRoute) {
+}
+ngOnInit(){
+this.activateRoute.params.subscribe(
+  (params) => {this.color = params['default']}
+)
 }
 changeColor(inputColor:any)
 {
@@ -25,5 +33,9 @@ changeColor(inputColor:any)
   }
   loggerMesData(){
   this.premierService.logger('test');
+  }
+  goToCv(){
+  const link :any= ['cv'];
+  this.router.navigate(link);
   }
 }
